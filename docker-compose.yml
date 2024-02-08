@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  finance-insurance-api-php:
+    image: devilbox/php-fpm:8.2-work
+    container_name: finance-insurance-api-php
+    expose:
+      - 9000
+    volumes:
+      - ./:/var/www/app
+    working_dir: /var/www/app
+    restart: unless-stopped
