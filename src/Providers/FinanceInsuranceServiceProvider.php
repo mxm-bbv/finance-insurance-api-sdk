@@ -20,7 +20,7 @@ class FinanceInsuranceServiceProvider extends ServiceProvider
     private function registerPublishableConfigs(): void
     {
         $this->publishes([
-            __DIR__ . '../../config/finance-insurance.php' => config_path('finance-insurance.php')
+            __DIR__ . '/../../config/finance-insurance.php' => config_path('finance-insurance.php')
         ], 'finance-insurance');
     }
 }
