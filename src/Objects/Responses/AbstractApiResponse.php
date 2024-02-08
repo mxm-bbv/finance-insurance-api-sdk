@@ -42,4 +42,9 @@ abstract class AbstractApiResponse
             'success' => $this->success
         ];
     }
+
+    public function isError(): ?string
+    {
+        return (bool) $this->error;
+    }
 }
