@@ -13,7 +13,10 @@ abstract class AbstractApiResponse
     public function __construct(private readonly mixed $response)
     {
         collect($this->response)
-            ->each(fn($value, $key) => $this->__set(Str::camel($key), $value));
+            ->each(function ($value, $key) {
+                $key = Str::camel($key);
+                $this->{$key} = $value;
+            });
     }
 
     public function __get(string $name)
